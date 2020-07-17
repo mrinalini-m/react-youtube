@@ -1,7 +1,6 @@
 import { Box, Container, Grid, makeStyles } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import youtube from '../api/youtube'
-import '../styles/App.css'
 import { flattenVideos, VideoValidator } from '../utils'
 import SearchBar from './SearchBar'
 import VideoList from './VideoList'
