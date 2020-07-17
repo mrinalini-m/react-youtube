@@ -1,5 +1,5 @@
 import { Box, Container, Grid, makeStyles } from '@material-ui/core'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import youtube from '../api/youtube'
 import '../styles/App.css'
 import { flattenVideos, VideoValidator } from '../utils'
@@ -14,6 +14,10 @@ function App() {
     null
   )
   const classes = useStyles()
+
+  useEffect(() => {
+    setSelectedVideo(videos[0])
+  }, [videos])
 
   const handleSubmit = async (searchTerm: string) => {
     const videos: Array<object> = await youtube.search(searchTerm)
