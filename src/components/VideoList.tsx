@@ -1,8 +1,9 @@
 import React from 'react'
+import { VideoValidator } from '../utils'
 import VideoListItem from './VideoListItem'
 
 interface Props {
-  videos: Array<any>
+  videos: Array<VideoValidator>
   onVideoSelect: Function
 }
 
@@ -13,7 +14,7 @@ const VideoList = ({ videos, onVideoSelect }: Props) => {
         {videos.map((video) => (
           <VideoListItem
             onVideoSelect={onVideoSelect}
-            key={video.id.videoId}
+            key={video.id}
             video={video}
           />
         ))}

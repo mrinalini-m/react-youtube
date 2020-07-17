@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY
 
-async function search(searchTerm: string) {
+async function search(searchTerm: string): Promise<Array<object>> {
   try {
     const response = await axios.get('search', {
       baseURL: 'https://www.googleapis.com/youtube/v3/',

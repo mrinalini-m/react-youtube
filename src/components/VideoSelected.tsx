@@ -1,23 +1,24 @@
 import React from 'react'
+import { VideoValidator } from '../utils'
 
 interface Props {
-  video: any
+  video: VideoValidator
 }
 
 const VideoDescription = ({ video }: Props) => {
   return (
     <div>
       <p>
-        {video.snippet.title} - {video.snippet.channelTitle}
+        {video.title} - {video.channelTitle}
       </p>
-      <p>{video.snippet.channelTitle}</p>
-      <p>{video.snippet.description}</p>
+      <p>{video.channelTitle}</p>
+      <p>{video.description}</p>
     </div>
   )
 }
 
 export default function VideoSelected({ video }: Props) {
-  const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
+  const videoSrc = `https://www.youtube.com/embed/${video.id}`
 
   return (
     <div>

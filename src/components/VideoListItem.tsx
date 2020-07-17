@@ -1,7 +1,8 @@
 import React from 'react'
+import { VideoValidator } from '../utils'
 
 interface Props {
-  video: any
+  video: VideoValidator
   onVideoSelect: Function
 }
 
@@ -9,5 +10,5 @@ export default function VideoListItem({ video, onVideoSelect }: Props) {
   const handleClick = () => {
     onVideoSelect(video)
   }
-  return <li onClick={handleClick}>{video.snippet.title}</li>
+  return <li onClick={handleClick}>{video.title}</li>
 }
