@@ -7,8 +7,8 @@ A small project made with react using youtube API.
 
 ## TODOS:
 
-1. [ ] Add Styles (Material UI? Semantic UI?)
-2. [ ] Write Tests
+1. [ ] Write Tests
+2. [x] Add Styles (Material UI? Semantic UI?)
 3. [x] Create a quick mockup
 4. [x] Figure out data flow
 5. [x] Project scaffold + fake data

@@ -1,11 +1,18 @@
+import { makeStyles, Paper, TextField } from '@material-ui/core'
 import React, { useState } from 'react'
 
+const useStyles = makeStyles({
+  form: {
+    padding: '1rem',
+  },
+})
 interface Props {
   onSubmit: Function
 }
 
 export default function SearchBar({ onSubmit }: Props) {
-  const [searchTerm, setSearchTerm] = useState('Mew Cat')
+  const [searchTerm, setSearchTerm] = useState('')
+  const classes = useStyles()
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setSearchTerm(event.target.value)
@@ -17,19 +24,19 @@ export default function SearchBar({ onSubmit }: Props) {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor='video-search'>Video Search</label>
-          <input
-            onChange={handleChange}
-            autoComplete='off'
-            name='video-search'
-            type='text'
-            value={searchTerm}
-          />
-        </div>
+    <Paper>
+      <form onSubmit={handleSubmit} className={classes.form}>
+        <TextField
+          onChange={handleChange}
+          autoComplete='off'
+          value={searchTerm}
+          id='outlined-basic'
+          label='Search'
+          variant='outlined'
+          size='small'
+          fullWidth
+        />
       </form>
-    </div>
+    </Paper>
   )
 }

@@ -1,3 +1,4 @@
+import List from '@material-ui/core/List'
 import React from 'react'
 import { VideoValidator } from '../utils'
 import VideoListItem from './VideoListItem'
@@ -9,17 +10,15 @@ interface Props {
 
 const VideoList = ({ videos, onVideoSelect }: Props) => {
   return (
-    <div>
-      <ul>
-        {videos.map((video) => (
-          <VideoListItem
-            onVideoSelect={onVideoSelect}
-            key={video.id}
-            video={video}
-          />
-        ))}
-      </ul>
-    </div>
+    <List>
+      {videos.map((video) => (
+        <VideoListItem
+          onVideoSelect={onVideoSelect}
+          key={video.id}
+          video={video}
+        />
+      ))}
+    </List>
   )
 }
 
