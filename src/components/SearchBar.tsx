@@ -6,12 +6,13 @@ const useStyles = makeStyles({
     padding: '1rem',
   },
 })
-interface Props {
+
+export interface Props {
   onSubmit: Function
 }
 
 export default function SearchBar({ onSubmit }: Props) {
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState<String>('')
   const classes = useStyles()
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -25,8 +26,13 @@ export default function SearchBar({ onSubmit }: Props) {
 
   return (
     <Paper>
-      <form onSubmit={handleSubmit} className={classes.form}>
+      <form
+        data-testid='search-bar'
+        onSubmit={handleSubmit}
+        className={classes.form}
+      >
         <TextField
+          data-testid='input-wrapper'
           onChange={handleChange}
           autoComplete='off'
           value={searchTerm}

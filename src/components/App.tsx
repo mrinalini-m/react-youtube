@@ -5,6 +5,7 @@ import { flattenVideos, VideoValidator } from '../utils'
 import SearchBar from './SearchBar'
 import VideoList from './VideoList'
 import VideoSelected from './VideoSelected'
+
 const useStyles = makeStyles({ grid: { justifyContent: 'center' } })
 
 function App() {
@@ -14,17 +15,20 @@ function App() {
   )
   const classes = useStyles()
 
+  // Select first video when videos gets updated
   useEffect(() => {
     setSelectedVideo(videos[0])
   }, [videos])
 
   const handleSubmit = async (searchTerm: string) => {
     const videos: Array<object> = await youtube.search(searchTerm)
-    setVideos(flattenVideos(videos))
+    const flattenedVideos: Array<VideoValidator> = flattenVideos(videos)
+
+    setVideos(flattenedVideos)
   }
 
   return (
-    <Container>
+    <Container data-testid='app'>
       <Box my={4}>
         <Grid className={classes.grid} container spacing={5}>
           <Grid item xs={12}>

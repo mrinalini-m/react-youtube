@@ -3,14 +3,14 @@ import React from 'react'
 import { VideoValidator } from '../utils'
 import VideoListItem from './VideoListItem'
 
-interface Props {
+export interface Props {
   videos: Array<VideoValidator>
   onVideoSelect: Function
 }
 
 const VideoList = ({ videos, onVideoSelect }: Props) => {
   return (
-    <List>
+    <List data-testid='video-list'>
       {videos.map((video) => (
         <VideoListItem
           onVideoSelect={onVideoSelect}
