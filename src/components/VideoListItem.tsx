@@ -1,9 +1,13 @@
 import React from 'react'
 
 interface Props {
-  video: { id: number; title: string }
+  video: any
+  onVideoSelect: Function
 }
 
-export default function VideoListItem({ video }: Props) {
-  return <li>{video.title}</li>
+export default function VideoListItem({ video, onVideoSelect }: Props) {
+  const handleClick = () => {
+    onVideoSelect(video)
+  }
+  return <li onClick={handleClick}>{video.snippet.title}</li>
 }

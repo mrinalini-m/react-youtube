@@ -7,13 +7,13 @@ A small project made with react using youtube API.
 
 ## TODOS:
 
-1. [ ] Project scaffold + fake data
-2. [ ] Get youtube API key + set up api call with axios(?)
-3. [ ] Add real code to scaffold
-4. [ ] Add Styles (Material UI? Semantic UI?)
-5. [ ] Write Tests
-6. [x] Create a quick mockup
-7. [x] Figure out data flow
+1. [ ] Add Styles (Material UI? Semantic UI?)
+2. [ ] Write Tests
+3. [x] Create a quick mockup
+4. [x] Figure out data flow
+5. [x] Project scaffold + fake data
+6. [x] Get youtube API key + set up api call with axios(?)
+7. [x] Add real code to scaffold
 
 ### Stretch Goals:
 
